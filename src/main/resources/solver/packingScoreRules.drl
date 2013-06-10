@@ -1,0 +1,53 @@
+package solver;
+    dialect "java"
+
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+
+import domain.Packing;
+import domain.Part;
+import domain.Platform;
+
+global HardSoftScoreHolder scoreHolder;
+
+//*****************
+// Hard Constraints
+//*****************
+
+rule "partOverlap"
+    when
+        $p1 : Part($id : id)
+        $p2 : Part(id > $id, $area : intersectArea($p1))
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, -$area);
+end
+
+rule "outOfPlatformBoundsWidth"
+    when
+        $platform : Platform($width : width)
+        $part : Part(platform == $platform, $partWidth : width + coordinates.getX())
+        $partWidth : Number(doubleValue > $width)
+
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, $width - $partWidth.intValue());
+end
+
+rule "outOfPlatformBoundsHeight"
+    when
+        $platform : Platform($height : height)
+        $part : Part(platform == $platform, $partHeight : height + coordinates.getY())
+        $partHeight : Number(doubleValue > $height)
+
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, $height - $partHeight.intValue());
+end
+
+//*****************
+// Soft Constraints
+//*****************
+
+rule "leftoverSpace"
+    when
+        Platform($l : leftoverArea)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, -$l);
+end
