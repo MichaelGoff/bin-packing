@@ -16,8 +16,8 @@ global HardSoftDoubleScoreHolder scoreHolder;
 rule "partOverlap"
     when
         $p1 : Part($id : id)
-        //$p2 : Part(id > $id, $area : intersectArea($p1))
-        Part($area : intersectArea())
+        $p2 : Part(id > $id)
+        $area : Double($p1.intersectArea($p2) > 0)
     then
         scoreHolder.addHardConstraintMatch(kcontext, -$area);
 end
