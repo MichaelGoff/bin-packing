@@ -117,10 +117,10 @@ public class Part {
 
     public double intersectArea(Part part) {
         if(intersects(part)) {
-            return ((part.getCoordinates().getX() + part.getWidth()) -
+            return Math.abs(((part.getCoordinates().getX() + part.getWidth()) -
                         this.getCoordinates().getX()) *
                     ((part.getCoordinates().getY() + part.getHeight()) -
-                        this.getCoordinates().getY());
+                        this.getCoordinates().getY()));
         } else {
             return 0.0;
         }

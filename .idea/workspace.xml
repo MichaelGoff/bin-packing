@@ -2,23 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a301690-a12e-4018-ab9d-f7dee1886142" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Packing.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Packing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin-packing.iml" afterPath="$PROJECT_DIR$/bin-packing.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Part.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Part.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/solver/packingScoreRules.drl" afterPath="$PROJECT_DIR$/src/main/resources/solver/packingScoreRules.drl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/solver/packingSolverConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/solver/packingSolverConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="bin-packing.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1369419714572" ignored="false" />
     <file path="/Platform.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1370541156827" ignored="false" />
-    <file path="/Part.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1370543144839" ignored="false" />
+    <file path="/Part.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1370974883957" ignored="false" />
     <file path="/Row.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1369333175594" ignored="false" />
     <file path="/StartY.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1369335653436" ignored="false" />
     <file path="/a.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1369404117420" ignored="false" />
     <file path="/packingSolverConfig.xml" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1370970302554" ignored="false" />
     <file path="/Packing.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1370964544360" ignored="false" />
-    <file path="/packingScoreRules.drl" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1370970951573" ignored="false" />
+    <file path="/packingScoreRules.drl" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1370975107990" ignored="false" />
     <file path="$USER_HOME$/Downloads/optaplanner-distribution-6.0.0.Beta2/examples/sources/src/main/java/org/optaplanner/examples/cloudbalancing/domain/solver/CloudComputerStrengthComparator.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1369418195357" ignored="false" />
     <file path="$USER_HOME$/Downloads/optaplanner-distribution-6.0.0.Beta2/examples/sources/src/main/java/org/optaplanner/examples/cloudbalancing/solver/move/CloudProcessSwapMove.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1369418195357" ignored="false" />
     <file path="$USER_HOME$/Downloads/optaplanner-distribution-6.0.0.Beta2/examples/sources/src/main/java/org/optaplanner/examples/cloudbalancing/solver/move/CloudBalancingMoveHelper.java" changelist="7a301690-a12e-4018-ab9d-f7dee1886142" time="1369418195357" ignored="false" />
@@ -182,7 +179,16 @@
       <file leaf-file-name="packingScoreRules.drl" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/solver/packingScoreRules.drl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="49" selection-start="239" selection-end="239" vertical-scroll-proportion="0.08797654">
+            <state line="20" column="66" selection-start="485" selection-end="485" vertical-scroll-proportion="-0.011730205">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Part.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/domain/Part.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="122" column="54" selection-start="3670" selection-end="3670" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -291,11 +297,11 @@
         <option value="$PROJECT_DIR$/src/main/java/persistence/PackingGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Coordinate.java" />
         <option value="$PROJECT_DIR$/src/main/java/solver/move/RotatePartMove.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/Part.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Platform.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Packing.java" />
         <option value="$PROJECT_DIR$/src/main/resources/solver/packingSolverConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/Part.java" />
         <option value="$PROJECT_DIR$/src/main/resources/solver/packingScoreRules.drl" />
       </list>
     </option>
@@ -474,6 +480,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin-packing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin-packing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -809,13 +841,6 @@
         <state line="11" column="73" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Part.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="54" selection-start="3661" selection-end="3661" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="75" selection-start="1583" selection-end="1583" vertical-scroll-proportion="0.0">
@@ -888,9 +913,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Part.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="54" selection-start="3670" selection-end="3670" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/solver/packingScoreRules.drl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="239" selection-end="239" vertical-scroll-proportion="0.08797654">
+        <state line="20" column="66" selection-start="485" selection-end="485" vertical-scroll-proportion="-0.011730205">
           <folding />
         </state>
       </provider>

@@ -25,20 +25,20 @@ rule "outOfPlatformBoundsWidth"
     when
         $platform : Platform($width : width)
         $part : Part(platform == $platform, $partWidth : width + coordinates.getX())
-        $partWidth : Number(doubleValue > $width)
+        $compareWidth : Number($partWidth > $width)
 
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $width - $partWidth);
+        scoreHolder.addHardConstraintMatch(kcontext, $width - $compareWidth.doubleValue());
 end
 
 rule "outOfPlatformBoundsHeight"
     when
         $platform : Platform($height : height)
         $part : Part(platform == $platform, $partHeight : height + coordinates.getY())
-        $partHeight : Number(doubleValue > $height)
+        $compareHeight : Number($partHeight > $height)
 
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $height - $partHeight);
+        scoreHolder.addHardConstraintMatch(kcontext, $height - $compareHeight.doubleValue());
 end
 
 //*****************
