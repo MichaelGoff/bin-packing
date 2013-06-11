@@ -5,7 +5,7 @@
     <planningEntityClass>domain.Part</planningEntityClass>
     <!-- Define the score function -->
     <scoreDirectorFactory>
-        <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+        <scoreDefinitionType>HARD_SOFT_DOUBLE</scoreDefinitionType>
         <scoreDrl>/solver/packingScoreRules.drl</scoreDrl>
     </scoreDirectorFactory>
 

@@ -1,13 +1,13 @@
 package solver;
     dialect "java"
 
-import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+import org.optaplanner.core.api.score.buildin.hardsoftdouble.HardSoftDoubleScoreHolder;
 
 import domain.Packing;
 import domain.Part;
 import domain.Platform;
 
-global HardSoftScoreHolder scoreHolder;
+global HardSoftDoubleScoreHolder scoreHolder;
 
 //*****************
 // Hard Constraints
@@ -28,7 +28,7 @@ rule "outOfPlatformBoundsWidth"
         $partWidth : Number(doubleValue > $width)
 
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $width - $partWidth.intValue());
+        scoreHolder.addHardConstraintMatch(kcontext, $width - $partWidth);
 end
 
 rule "outOfPlatformBoundsHeight"
@@ -38,7 +38,7 @@ rule "outOfPlatformBoundsHeight"
         $partHeight : Number(doubleValue > $height)
 
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $height - $partHeight.intValue());
+        scoreHolder.addHardConstraintMatch(kcontext, $height - $partHeight);
 end
 
 //*****************

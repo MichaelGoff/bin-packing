@@ -1,6 +1,7 @@
 package domain;
 
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.impl.solution.Solution;
 
@@ -15,6 +16,7 @@ import java.util.Collection;
  *
  * @author Michael Goff
  */
+@PlanningSolution
 public class Packing implements Solution<HardSoftScore> {
     private List<Platform> platformList;
     private List<Part> partList;
