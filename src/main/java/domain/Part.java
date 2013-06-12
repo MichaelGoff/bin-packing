@@ -27,10 +27,11 @@ public class Part {
 
 
 
-    public Part(Long id, double width, double height) {
+    public Part(Long id, double width, double height, Platform platform) {
         this.id = id;
         setHeight(height);
         setWidth(width);
+        this.platform = platform;
     }
 
     @PlanningVariable
@@ -59,8 +60,8 @@ public class Part {
         this.id = id;
     }
 
-    @PlanningVariable(strengthComparatorClass = PlatformStrengthComparator.class)
-    @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "platformList")
+    //@PlanningVariable(strengthComparatorClass = PlatformStrengthComparator.class)
+    //@ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "platformList")
     public Platform getPlatform() {
         return platform;
     }

@@ -15,14 +15,16 @@ import java.util.Scanner;
 public class PackingGenerator {
 
     private static final double PLATFORM_SIDE_LENGTH = 10.0;
+    private static final Platform PLATFORM = new Platform(0L, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH);
     List<BigDecimal> xCoordinateList;
     List<BigDecimal> yCoordinateList;
+
 
     public Packing createPacking() {
         Packing packing = new Packing();
 
         createPartList(packing);
-        createPlatformList(packing);
+        //createPlatformList(packing);
         packing.setCoordinateList(createCoordinateList());
 
         return packing;
@@ -47,19 +49,19 @@ public class PackingGenerator {
             int id = lineScan.nextInt();
             double width = lineScan.nextDouble();
             double height = lineScan.nextDouble();
-            partList.add(new Part((long) id, width, height));
+            partList.add(new Part((long) id, width, height, PLATFORM));
         }
 
         packing.setPartList(partList);
     }
 
-    public void createPlatformList(Packing packing) {
+    /*public void createPlatformList(Packing packing) {
         List<Platform> platformList = new ArrayList<Platform>();
 
         platformList.add(new Platform(0L, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH));
 
         packing.setPlatformList(platformList);
-    }
+    } */
 
     public void createXCoordinateList() {
         xCoordinateList = new ArrayList<BigDecimal>();
