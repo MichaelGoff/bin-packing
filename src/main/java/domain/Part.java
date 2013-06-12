@@ -34,6 +34,10 @@ public class Part {
         this.platform = platform;
     }
 
+    public Part() {
+
+    }
+
     @PlanningVariable
     @ValueRange(type = ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY, planningEntityProperty = "possibleCoordinatesList")
     public Coordinate getCoordinates() {
