@@ -39,7 +39,9 @@ public class Part {
     }
 
     @PlanningVariable
-    @ValueRange(type = ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY, planningEntityProperty = "possibleCoordinatesList")
+    //TODO: limit coordinate list to those that are possible.
+    //@ValueRange(type = ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY, planningEntityProperty = "possibleCoordinatesList")
+    @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty  = "coordinateList")
     public Coordinate getCoordinates() {
         return coordinates;
     }
@@ -105,7 +107,7 @@ public class Part {
     }
 
     public String toString () {
-        return getLabel() + " --> " + platform.getLabel();
+        return getLabel() + " --> " + platform.getLabel() + ": " + coordinates;
     }
 
     /**

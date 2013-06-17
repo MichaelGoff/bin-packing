@@ -22,6 +22,7 @@ public class PackingApp  {
         solver.solve();
         Packing solvedPacking = (Packing) solver.getBestSolution();
 
+        System.out.println("Score: " + solvedPacking.getScore());
         System.out.println("Part assignment: \n" + toDisplayString(solvedPacking));
     }
 
