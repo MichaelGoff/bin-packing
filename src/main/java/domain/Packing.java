@@ -2,10 +2,9 @@ package domain;
 
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
-import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.core.api.score.buildin.hardsoftdouble.HardSoftDoubleScore;
 import org.optaplanner.core.impl.solution.Solution;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,18 +16,18 @@ import java.util.Collection;
  * @author Michael Goff
  */
 @PlanningSolution
-public class Packing implements Solution<HardSoftScore> {
+public class Packing implements Solution<HardSoftDoubleScore> {
     //private List<Platform> platformList;
     private List<Part> partList;
     private List<Coordinate> coordinateList;
-    private HardSoftScore score;
+    private HardSoftDoubleScore score;
     private Long id;
 
-    public HardSoftScore getScore() {
+    public HardSoftDoubleScore getScore() {
         return score;
     }
 
-    public void setScore(HardSoftScore score) {
+    public void setScore(HardSoftDoubleScore score) {
         this.score = score;
     }
 
