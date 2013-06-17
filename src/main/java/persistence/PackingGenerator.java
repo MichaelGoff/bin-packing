@@ -15,7 +15,6 @@ import java.util.Scanner;
 public class PackingGenerator {
 
     private static final double PLATFORM_SIDE_LENGTH = 10.0;
-    private static final Platform PLATFORM = new Platform(0L, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH);
     List<BigDecimal> xCoordinateList;
     List<BigDecimal> yCoordinateList;
 
@@ -32,6 +31,7 @@ public class PackingGenerator {
 
     public void createPartList(Packing packing) {
         List<Part> partList = new ArrayList<Part>();
+        Platform platform = new Platform(0L, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH);
         //Scanner to read parts from a provided text file.
         Scanner input = null;
         try {                              //TODO alternative to file path
@@ -49,7 +49,7 @@ public class PackingGenerator {
             int id = lineScan.nextInt();
             double width = lineScan.nextDouble();
             double height = lineScan.nextDouble();
-            partList.add(new Part((long) id, width, height, PLATFORM));
+            partList.add(new Part((long) id, width, height, platform));
         }
 
         packing.setPartList(partList);
