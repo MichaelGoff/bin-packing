@@ -42,6 +42,13 @@ rule "outOfPlatformBoundsHeight"
         scoreHolder.addHardConstraintMatch(kcontext, $height - $compareHeight.doubleValue());
 end
 
+rule "partNotPlaced"
+    when
+        $part : Part(platform == null)
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, -10.0);
+end
+
 //*****************
 // Soft Constraints
 //*****************
