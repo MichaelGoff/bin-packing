@@ -19,7 +19,7 @@
     </constructionHeuristic>
     <localSearch>
         <acceptor>
-            <simulatedAnnealingStartingTemperature>0hard/400soft</simulatedAnnealingStartingTemperature>
+            <simulatedAnnealingStartingTemperature>2hard/50soft</simulatedAnnealingStartingTemperature>
         </acceptor>
         <forager>
             <acceptedCountLimit>4</acceptedCountLimit>

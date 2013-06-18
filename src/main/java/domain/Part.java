@@ -107,7 +107,8 @@ public class Part {
     }
 
     public String toString () {
-        return getLabel() + " --> " + platform.getLabel() + ": " + coordinates;
+        return getLabel() + " --> " + platform.getLabel() + ": " + coordinates +
+                            " W: " + width + " H: " + height;
     }
 
     /**
