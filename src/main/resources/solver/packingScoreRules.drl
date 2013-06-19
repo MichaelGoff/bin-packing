@@ -17,19 +17,18 @@ rule "partOverlap"
     when
         $p1 : Part($id : id)
         $p2 : Part(id > $id)
-    then
+        eval($p2.intersects($p1))
+
+    then                             //TODO: why does this produce a positive hard score?
         scoreHolder.addHardConstraintMatch(kcontext, -$p2.intersectArea($p1));
-        System.out.println("partOverlap fired");
 end
 
 rule "outOfPlatformBoundsWidth"
     when
-        $platform : Platform($width : width)
-        $part : Part(platform == $platform, $partWidth : width + coordinates.getX())
-        $compareWidth : Number($partWidth > $width)
-
+        $part : Part($id : id)
+        eval($part.widthOverlapsPlatform())
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $width - $compareWidth.doubleValue());
+        scoreHolder.addHardConstraintMatch(kcontext, -$part.widthOverlap());
         System.out.println("outOfPlatformBoundsWidth fired");
 end
 

@@ -111,6 +111,20 @@ public class Part {
                             " W: " + width + " H: " + height;
     }
 
+    public boolean widthOverlapsPlatform(){
+        if (this.coordinates.getX() >= this.platform.getWidth()) {
+            return true;
+        } else if (this.width + this.coordinates.getX() > this.platform.getWidth()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public double widthOverlap() {
+        return (this.coordinates.getX() + this.width) - platform.getWidth();
+    }
+
     /**
      * Checks if another part intersects this part.
      * @param part The other part to compare.
