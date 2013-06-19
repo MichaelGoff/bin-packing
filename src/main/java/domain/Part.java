@@ -112,18 +112,23 @@ public class Part {
     }
 
     public boolean widthOverlapsPlatform(){
-        if (this.coordinates.getX() >= this.platform.getWidth()) {
-            return true;
-        } else if (this.width + this.coordinates.getX() > this.platform.getWidth()) {
-            return true;
-        } else {
-            return false;
-        }
+        return (this.coordinates.getX() >= this.platform.getWidth()) ||
+                (this.width + this.coordinates.getX() > this.platform.getWidth());
     }
 
     public double widthOverlap() {
         return (this.coordinates.getX() + this.width) - platform.getWidth();
     }
+
+    public boolean heightOverlapsPlatform() {
+        return (this.coordinates.getY() >= this.platform.getHeight()) ||
+                (this.height + this.coordinates.getY() > this.platform.getHeight());
+    }
+
+    public double heightOverlap() {
+        return ((this.coordinates.getY() + this.height) - platform.getHeight());
+    }
+
 
     /**
      * Checks if another part intersects this part.

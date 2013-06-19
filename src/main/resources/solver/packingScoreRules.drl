@@ -29,26 +29,16 @@ rule "outOfPlatformBoundsWidth"
         eval($part.widthOverlapsPlatform())
     then
         scoreHolder.addHardConstraintMatch(kcontext, -$part.widthOverlap());
-        System.out.println("outOfPlatformBoundsWidth fired");
 end
 
 rule "outOfPlatformBoundsHeight"
     when
-        $platform : Platform($height : height)
-        $part : Part(platform == $platform, $partHeight : height + coordinates.getY())
-        $compareHeight : Number($partHeight > $height)
+        $part : Part($id : id)
+        eval($part.heightOverlapsPlatform())
 
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $height - $compareHeight.doubleValue());
+        scoreHolder.addHardConstraintMatch(kcontext, -$part.heightOverlap());
         System.out.println("outOfPlatformBoundsHeight fired");
-end
-
-rule "partNotPlaced"
-    when
-        $part : Part(platform == null)
-    then
-        scoreHolder.addHardConstraintMatch(kcontext, -10.0);
-        System.out.println("partNotPlaced fired");
 end
 
 //*****************
