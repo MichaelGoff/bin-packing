@@ -10,6 +10,10 @@ public class Coordinate {
         setCoordinates(x, y);
     }
 
+    public Coordinate() {
+        this(new BigDecimal("0.00"), new BigDecimal("0.00"));
+    }
+
     public double getY() {
         return y.doubleValue();
     }

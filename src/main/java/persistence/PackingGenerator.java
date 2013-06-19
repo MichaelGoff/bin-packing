@@ -49,7 +49,9 @@ public class PackingGenerator {
             int id = lineScan.nextInt();
             double width = lineScan.nextDouble();
             double height = lineScan.nextDouble();
-            partList.add(new Part((long) id, width, height, platform));
+            Part temp = new Part((long) id, width, height, platform);
+            temp.setCoordinates(new Coordinate());
+            partList.add(temp);
         }
 
         packing.setPartList(partList);
