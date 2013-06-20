@@ -38,17 +38,16 @@ rule "outOfPlatformBoundsHeight"
 
     then
         scoreHolder.addHardConstraintMatch(kcontext, -$part.heightOverlap());
-        System.out.println("outOfPlatformBoundsHeight fired");
 end
 
 //*****************
 // Soft Constraints
 //*****************
 
-rule "leftoverSpace"
+rule "leftoverSpace"       //TODO: prevent it from multiplying by number of parts
     when
-        Platform($l : leftoverArea)
+        $part : Part($partId : id)
+        $platform : Platform($id : id) from $part.platform
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, -$l);
-        System.out.println("leftoverSpace fired");
+        scoreHolder.addSoftConstraintMatch(kcontext, -$platform.getLeftoverArea());
 end

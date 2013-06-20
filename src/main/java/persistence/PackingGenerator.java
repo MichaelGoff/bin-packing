@@ -49,9 +49,14 @@ public class PackingGenerator {
             int id = lineScan.nextInt();
             double width = lineScan.nextDouble();
             double height = lineScan.nextDouble();
-            Part temp = new Part((long) id, width, height, platform);
+            Part temp = new Part((long) id, width, height);
             temp.setCoordinates(new Coordinate());
             partList.add(temp);
+            platform.addPart(temp);
+        }
+
+        for (Part part : partList) {
+            part.setPlatform(platform);   //TODO: this may not work with multiple platforms
         }
 
         packing.setPartList(partList);

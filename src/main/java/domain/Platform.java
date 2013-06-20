@@ -25,6 +25,7 @@ public class Platform {
         this.height = height;
         this.width = width;
         this.id = id;
+        partList = new ArrayList<Part>();
     }
 
     public Long getId() {
@@ -74,21 +75,9 @@ public class Platform {
     /**
      * This method checks if the part intersects others and fits on the platform then adds it to the platform.
      * @param part The part to be added.
-     * @return True if it successfully added, false if intersection or off edge.
      */
-    public boolean addPart(Part part) {
-        for(Part p : partList) {
-            if(p.intersects(part)) {
-                return false;
-            }
-        }
-        if(!canHold(part)) {
-            return false;
-        }
-
+    public void addPart(Part part) {
         partList.add(part);
-        return true;
-
     }
 
     public double getArea() {
@@ -105,6 +94,21 @@ public class Platform {
 
     public String getLabel() {
         return "Platform" + id;
+    }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Platform: \n");
+        stringBuilder.append("Width: ");
+        stringBuilder.append(width);
+        stringBuilder.append("\nHeight: ");
+        stringBuilder.append(height);
+        for(Part part : partList) {
+            stringBuilder.append("\n");
+            stringBuilder.append(part);
+        }
+
+        return stringBuilder.toString();
     }
 
 

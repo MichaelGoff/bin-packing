@@ -27,11 +27,10 @@ public class Part {
 
 
 
-    public Part(Long id, double width, double height, Platform platform) {
+    public Part(Long id, double width, double height) {
         this.id = id;
         setHeight(height);
         setWidth(width);
-        this.platform = platform;
     }
 
     public Part() {
