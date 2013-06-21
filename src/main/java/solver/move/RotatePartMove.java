@@ -4,7 +4,6 @@ import domain.Part;
 import org.optaplanner.core.impl.move.Move;
 import org.optaplanner.core.impl.score.director.ScoreDirector;
 
-import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -16,7 +15,7 @@ public class RotatePartMove implements Move {
     }
 
     public boolean isMoveDoable(ScoreDirector scoreDirector) {
-        return !(part.getCoordinates().getX() == part.getCoordinates().getY());
+        return !(part.getWidth() == part.getHeight());
     }
 
     public Move createUndoMove(ScoreDirector scoreDirector) {
@@ -24,7 +23,9 @@ public class RotatePartMove implements Move {
     }
 
     public void doMove(ScoreDirector scoreDirector) {
-        part.setCoordinate(new BigDecimal(part.getCoordinates().getY()), new BigDecimal(part.getCoordinates().getX()));
+        double temp = part.getWidth();
+        part.setWidth(part.getHeight());
+        part.setHeight(temp);
     }
 
     public Collection<? extends Object> getPlanningEntities() {
@@ -32,7 +33,7 @@ public class RotatePartMove implements Move {
     }
 
     public Collection<?extends Object> getPlanningValues() {
-        return Collections.singletonList(part.getCoordinates());
+        return Collections.singletonList(null);
     }
 
 

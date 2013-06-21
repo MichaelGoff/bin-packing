@@ -13,13 +13,13 @@ global HardSoftDoubleScoreHolder scoreHolder;
 // Hard Constraints
 //*****************
 
-rule "partOverlap"
+rule "partOverlap"        //TODO: why does this produce a positive hard score?
     when
         $p1 : Part($id : id)
         $p2 : Part(id > $id)
         eval($p2.intersects($p1))
 
-    then                             //TODO: why does this produce a positive hard score?
+    then
         scoreHolder.addHardConstraintMatch(kcontext, -$p2.intersectArea($p1));
 end
 
