@@ -23,9 +23,15 @@ public class RotatePartMove implements Move {
     }
 
     public void doMove(ScoreDirector scoreDirector) {
+        scoreDirector.beforeVariableChanged(part, "width, height");
         double temp = part.getWidth();
         part.setWidth(part.getHeight());
         part.setHeight(temp);
+        scoreDirector.afterVariableChanged(part, "width, height");
+    }
+
+    public String toString() {
+        return part + " Rotated W: " + part.getWidth() + "H: " + part.getHeight();
     }
 
     public Collection<? extends Object> getPlanningEntities() {

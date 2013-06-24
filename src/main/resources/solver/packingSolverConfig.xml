@@ -18,6 +18,12 @@
         <constructionHeuristicPickEarlyType>FIRST_LAST_STEP_SCORE_EQUAL_OR_IMPROVING</constructionHeuristicPickEarlyType>
     </constructionHeuristic>
     <localSearch>
+        <unionMoveSelector>
+            <changeMoveSelector />
+            <moveListFactory>
+                <moveListFactoryClass>solver.move.factory.RotatePartMoveFactory</moveListFactoryClass>
+            </moveListFactory>
+        </unionMoveSelector>
         <acceptor>
             <simulatedAnnealingStartingTemperature>2hard/50soft</simulatedAnnealingStartingTemperature>
         </acceptor>
