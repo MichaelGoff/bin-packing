@@ -35,7 +35,7 @@ public class PackingGenerator {
         //Scanner to read parts from a provided text file.
         Scanner input = null;
         try {                              //TODO alternative to file path
-            input = new Scanner(new File("/Users/mag/git/bin-packing/src/main/resources/rotatePartsList.txt"));
+            input = new Scanner(new File("/Users/mag/git/bin-packing/src/main/resources/partsList.txt"));
         } catch(FileNotFoundException e) {
             System.out.println("Parts List Text File not found in PackingGenerator.java");
             System.exit(1);

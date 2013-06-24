@@ -11,7 +11,7 @@
 
     <!-- Configure the optimization algorithm(s) -->
     <termination>
-        <maximumSecondsSpend>20</maximumSecondsSpend>
+        <maximumSecondsSpend>22</maximumSecondsSpend>
     </termination>
     <constructionHeuristic>
         <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
