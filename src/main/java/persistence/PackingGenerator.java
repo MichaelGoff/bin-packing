@@ -23,7 +23,7 @@ public class PackingGenerator {
         Packing packing = new Packing();
 
         createPartList(packing);
-        //createPlatformList(packing);
+        createPlatformList(packing);
         packing.setCoordinateList(createCoordinateList());
 
         return packing;
@@ -62,13 +62,13 @@ public class PackingGenerator {
         packing.setPartList(partList);
     }
 
-    /*public void createPlatformList(Packing packing) {
+    public void createPlatformList(Packing packing) {
         List<Platform> platformList = new ArrayList<Platform>();
 
         platformList.add(new Platform(0L, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH));
 
         packing.setPlatformList(platformList);
-    } */
+    }
 
     public void createXCoordinateList() {
         xCoordinateList = new ArrayList<BigDecimal>();

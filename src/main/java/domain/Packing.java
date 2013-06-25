@@ -17,7 +17,7 @@ import java.util.Collection;
  */
 @PlanningSolution
 public class Packing implements Solution<HardSoftDoubleScore> {
-    //private List<Platform> platformList;
+    private List<Platform> platformList;
     private List<Part> partList;
     private List<Coordinate> coordinateList;
     private HardSoftDoubleScore score;
@@ -47,17 +47,17 @@ public class Packing implements Solution<HardSoftDoubleScore> {
         this.coordinateList = coordinateList;
     }
 
-    /*public void setPlatformList(List<Platform> platformList) {
+    public void setPlatformList(List<Platform> platformList) {
         this.platformList = platformList;
-    }*/
+    }
 
     public void setPartList(List<Part> partList) {
         this.partList = partList;
     }
 
-    /*public List<Platform> getPlatformList() {
+    public List<Platform> getPlatformList() {
         return platformList;
-    } */
+    }
 
     @PlanningEntityCollectionProperty
     public List<Part> getPartList() {

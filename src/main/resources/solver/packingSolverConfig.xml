@@ -12,6 +12,7 @@
     <!-- Configure the optimization algorithm(s) -->
     <termination>
         <maximumSecondsSpend>22</maximumSecondsSpend>
+        <!--<scoreAttained>-0hard/-999999soft</scoreAttained>-->
     </termination>
     <constructionHeuristic>
         <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>

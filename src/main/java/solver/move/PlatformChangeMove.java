@@ -29,7 +29,9 @@ public class PlatformChangeMove implements Move {
     }
 
     public void doMove(ScoreDirector scoreDirector) {
+        scoreDirector.beforeVariableChanged(part, "platform");
         PackingMoveHelper.movePlatform(scoreDirector, part, toPlatform);
+        scoreDirector.afterVariableChanged(part, "platform");
     }
 
     public Collection<? extends Object> getPlanningEntities() {
