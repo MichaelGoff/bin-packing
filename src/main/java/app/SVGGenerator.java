@@ -8,8 +8,8 @@ import java.util.List;
 
 public class SVGGenerator {
 
-    public void write(List<Part> partList, Platform platform) {    //TODO: remove absolute path
-        File svg = new File("/Users/mag/git/bin-packing/src/main/resources/result/packed.svg");
+    public void write(List<Part> partList, Platform platform) {
+        File svg = new File("src/main/resources/result/packed.svg");
         try {
             Writer writer = new BufferedWriter(new FileWriter(svg));
 
