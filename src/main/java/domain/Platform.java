@@ -44,6 +44,14 @@ public class Platform {
         return width;
     }
 
+    public List<Part> getPartList() {
+        return partList;
+    }
+
+    public void setPartList(List<Part> partList) {
+        this.partList = partList;
+    }
+
     public List<Coordinate> getPossibleCoordinatesList() {
         List<Coordinate> possibleCoordinatesList = new ArrayList<Coordinate>();
 

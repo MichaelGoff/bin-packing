@@ -27,7 +27,7 @@ public class PackingApp  {
         System.out.println("Part assignment: \n" + toDisplayString(solvedPacking));
 
         SVGGenerator generator = new SVGGenerator();
-        generator.write(solvedPacking.getPartList(), new Platform(0L, 10.0, 10.0));
+        generator.write(solvedPacking.getPartList(), solvedPacking.getPlatformList());
     }
 
     public static String toDisplayString(Packing packing) {
