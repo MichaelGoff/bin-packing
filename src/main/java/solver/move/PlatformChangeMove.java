@@ -30,7 +30,9 @@ public class PlatformChangeMove implements Move {
 
     public void doMove(ScoreDirector scoreDirector) {
         scoreDirector.beforeVariableChanged(part, "platform");
-        PackingMoveHelper.movePlatform(scoreDirector, part, toPlatform);
+        part.getPlatform().getPartList().remove(part);
+        part.setPlatform(toPlatform);
+        part.getPlatform().getPartList().add(part);
         scoreDirector.afterVariableChanged(part, "platform");
     }
 
