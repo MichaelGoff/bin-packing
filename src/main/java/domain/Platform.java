@@ -100,6 +100,10 @@ public class Platform {
         return getArea() - sum;
     }
 
+    public boolean isEmpty() {
+        return partList.isEmpty();
+    }
+
     public String getLabel() {
         return "Platform" + id;
     }

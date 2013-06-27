@@ -51,3 +51,16 @@ rule "leftoverSpace"       //TODO: prevent it from multiplying by number of part
     then
         scoreHolder.addSoftConstraintMatch(kcontext, -$platform.getLeftoverArea());
 end
+
+//******
+// Other
+//******
+
+rule "platformRemoval"
+    when
+        $packing : Packing()
+        $platform : Platform($id : id) from $packing.platformList
+        eval($platform.isEmpty())
+    then
+        $packing.getPlatformList().remove($platform);
+end
