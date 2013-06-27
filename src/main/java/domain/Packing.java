@@ -64,43 +64,10 @@ public class Packing implements Solution<HardSoftDoubleScore> {
         return partList;
     }
 
-    /**
-     * Adds a part to the part list
-     * @param part The part to add to the list.
-     */
-    public void addPart(Part part) {
-        partList.add(part);
+    public void addPlatform() {
+        platformList.add(new Platform(new Long(platformList.size()), 10.0, 10.0));
     }
 
-    /*
-     * Adds a platform to the list.
-
-    public void addPlatform(int id) {
-        platformList.add(new Platform(id, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH));
-    }
-
-    public void placePart() {
-        boolean added = false;
-        int numPlatforms = 0;
-        addPlatform(numPlatforms);
-
-
-        for(Part part : partList) {
-            for(Platform platform : platformList) {
-                if(platform.addPart(part)) {
-                    added = true;
-                    break;
-                }
-            }
-
-            if(!added) {
-                numPlatforms++;
-                addPlatform(numPlatforms);
-                platformList.get(numPlatforms).addPart(part);
-
-            }
-        }
-    } */
 
     public Collection<? extends Object> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
