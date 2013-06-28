@@ -71,7 +71,7 @@ public class Packing implements Solution<HardSoftDoubleScore> {
 
     public Collection<? extends Object> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
-        //facts.addAll(platformList);        //TODO implement platforms
+        facts.addAll(platformList);
         facts.addAll(coordinateList);
 
         return facts;

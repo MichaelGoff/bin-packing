@@ -44,10 +44,9 @@ end
 // Soft Constraints
 //*****************
 
-rule "leftoverSpace"       //TODO: prevent it from multiplying by number of parts
+rule "leftoverSpace"
     when
-        $part : Part($partId : id)
-        $platform : Platform($id : id) from $part.platform
+        $platform : Platform($id : id)
     then
         scoreHolder.addSoftConstraintMatch(kcontext, -$platform.getLeftoverArea());
 end
