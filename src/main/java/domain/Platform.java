@@ -109,18 +109,7 @@ public class Platform {
     }
 
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Platform: \n");
-        stringBuilder.append("Width: ");
-        stringBuilder.append(width);
-        stringBuilder.append("\nHeight: ");
-        stringBuilder.append(height);
-        for(Part part : partList) {
-            stringBuilder.append("\n");
-            stringBuilder.append(part);
-        }
-
-        return stringBuilder.toString();
+        return "Platform " + id;
     }
 
 

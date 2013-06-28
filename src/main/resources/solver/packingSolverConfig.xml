@@ -25,8 +25,11 @@
                 <moveListFactoryClass>solver.move.factory.RotatePartMoveFactory</moveListFactoryClass>
             </moveListFactory>
             <!--<moveListFactory>
-                <moveListFactoryClass>solver.move.factory.PlatformChangeMoveFactory</moveListFactoryClass>
+                <moveListFactoryClass>solver.move.factory.AddPlatformMoveFactory</moveListFactoryClass>
             </moveListFactory>-->
+            <moveListFactory>
+                <moveListFactoryClass>solver.move.factory.PlatformChangeMoveFactory</moveListFactoryClass>
+            </moveListFactory>
         </unionMoveSelector>
         <acceptor>
             <simulatedAnnealingStartingTemperature>2hard/50soft</simulatedAnnealingStartingTemperature>

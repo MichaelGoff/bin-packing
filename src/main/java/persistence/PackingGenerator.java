@@ -65,6 +65,7 @@ public class PackingGenerator {
         List<Platform> platformList = new ArrayList<Platform>();
 
         platformList.add(new Platform(0L, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH));
+        platformList.add(new Platform(1L, PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH));
 
         packing.setPlatformList(platformList);
     }

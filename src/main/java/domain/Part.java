@@ -65,7 +65,7 @@ public class Part {
         this.id = id;
     }
 
-    //@PlanningVariable(strengthComparatorClass = PlatformStrengthComparator.class)
+    //@PlanningVariable
     //@ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "platformList")
     public Platform getPlatform() {
         return platform;
