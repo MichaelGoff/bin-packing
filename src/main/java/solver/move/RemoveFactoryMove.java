@@ -9,43 +9,43 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class AddPlatformMove implements Move {
+public class RemoveFactoryMove implements Move {
+    Platform platform;
     Part part;
     List<Platform> platformList;
-    Platform newPlatform;
 
-    public AddPlatformMove(Part part, List<Platform> platformList, Platform newPlatform) {
+    public RemoveFactoryMove(Part part, List<Platform> platformList, Platform platform) {
+        this.platform = platform;
         this.part = part;
         this.platformList = platformList;
-        this.newPlatform = newPlatform;
     }
 
     public boolean isMoveDoable(ScoreDirector scoreDirector) {
-        return true;
+        return platform.isEmpty();
     }
 
     public Move createUndoMove(ScoreDirector scoreDirector) {
-        return new AddPlatformMove(part, platformList, null);
+        return new AddPlatformMove(null, platformList, platform);
     }
 
     public void doMove(ScoreDirector scoreDirector) {
-        if(newPlatform != null) {
-            if(part == null) {
-                platformList.add(newPlatform);
-            } else{
-                part.getPlatform().getPartList().remove(part);
-                newPlatform.addPart(part);
-                part.setPlatform(newPlatform);
-                platformList.add(newPlatform);
+        if(part != null) {
+            platformList.get(1).addPart(part);
+            part.setPlatform(platformList.get(1));
+        }
+        for(Platform platform1 : platformList) {
+            if(platform1.equals(platform)) {
+                platformList.remove(platform1);
             }
         }
     }
 
     public Collection<? extends Object> getPlanningEntities() {
-        return Collections.singletonList(part);
+        return Collections.singletonList(null);
     }
 
     public Collection<? extends Object> getPlanningValues() {
         return Collections.singletonList(null);
     }
+
 }
