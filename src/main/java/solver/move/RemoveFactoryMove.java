@@ -33,11 +33,7 @@ public class RemoveFactoryMove implements Move {
             platformList.get(1).addPart(part);
             part.setPlatform(platformList.get(1));
         }
-        for(Platform platform1 : platformList) {
-            if(platform1.equals(platform)) {
-                platformList.remove(platform1);
-            }
-        }
+        platformList.remove(platform);
     }
 
     public Collection<? extends Object> getPlanningEntities() {

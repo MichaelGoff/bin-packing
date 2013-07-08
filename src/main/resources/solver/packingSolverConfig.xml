@@ -29,6 +29,9 @@
                 <moveListFactoryClass>solver.move.factory.AddPlatformMoveFactory</moveListFactoryClass>
             </moveListFactory>-->
             <moveListFactory>
+                <moveListFactoryClass>solver.move.factory.RemovePlatformMoveFactory</moveListFactoryClass>
+            </moveListFactory>
+            <moveListFactory>
                 <moveListFactoryClass>solver.move.factory.PlatformChangeMoveFactory</moveListFactoryClass>
             </moveListFactory>
         </unionMoveSelector>
