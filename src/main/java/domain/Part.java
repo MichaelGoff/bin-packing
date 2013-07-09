@@ -135,7 +135,8 @@ public class Part {
      * @return Returns true if the parts intersect and false if they do not intersect.
      */
     public boolean intersects(Part part) {
-        return (part.coordinates.getX() + part.getWidth() > this.coordinates.getX() &&
+        return part.platform.equals(this.platform) &&
+                (part.coordinates.getX() + part.getWidth() > this.coordinates.getX() &&
                 part.coordinates.getY() + part.getHeight() > this.coordinates.getY() &&
                 part.coordinates.getX() < this.coordinates.getX() + this.width &&
                 part.coordinates.getY() < this.coordinates.getY() + this.height);
