@@ -9,12 +9,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class RemoveFactoryMove implements Move {
+public class RemovePlatformMove implements Move {
     Platform platform;
     Part part;
     List<Platform> platformList;
 
-    public RemoveFactoryMove(Part part, List<Platform> platformList, Platform platform) {
+    public RemovePlatformMove(Part part, List<Platform> platformList, Platform platform) {
         this.platform = platform;
         this.part = part;
         this.platformList = platformList;

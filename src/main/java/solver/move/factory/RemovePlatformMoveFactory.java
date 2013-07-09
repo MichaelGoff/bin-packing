@@ -5,7 +5,7 @@ import domain.Platform;
 import org.optaplanner.core.impl.heuristic.selector.move.factory.MoveListFactory;
 import org.optaplanner.core.impl.move.Move;
 import org.optaplanner.core.impl.solution.Solution;
-import solver.move.RemoveFactoryMove;
+import solver.move.RemovePlatformMove;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class RemovePlatformMoveFactory implements MoveListFactory {
         List<Move> moveList = new ArrayList<Move>();
         List<Platform> platformList = packing.getPlatformList();
         for(Platform platform : platformList) {
-            moveList.add(new RemoveFactoryMove(null, platformList, platform));
+            moveList.add(new RemovePlatformMove(null, platformList, platform));
         }
 
         return moveList;
