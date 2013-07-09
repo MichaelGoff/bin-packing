@@ -47,6 +47,7 @@ end
 rule "leftoverSpace"
     when
         $platform : Platform($id : id)
+        eval(!$platform.isEmpty())
     then
         scoreHolder.addSoftConstraintMatch(kcontext, -$platform.getLeftoverArea());
 end

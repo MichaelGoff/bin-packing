@@ -27,7 +27,7 @@
             <!-- Causes infinite loop. Endlessly generates platforms
             <moveListFactory>
                 <moveListFactoryClass>solver.move.factory.AddPlatformMoveFactory</moveListFactoryClass>
-            </moveListFactory>-->
+            </moveListFactory>    -->
             <moveListFactory>
                 <moveListFactoryClass>solver.move.factory.RemovePlatformMoveFactory</moveListFactoryClass>
             </moveListFactory>
