@@ -2,6 +2,8 @@ package solver.move;
 
 import domain.Part;
 import domain.Platform;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.optaplanner.core.impl.move.Move;
 import org.optaplanner.core.impl.score.director.ScoreDirector;
 
@@ -47,5 +49,28 @@ public class AddPlatformMove implements Move {
 
     public Collection<? extends Object> getPlanningValues() {
         return Collections.singletonList(null);
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        } else if (o instanceof AddPlatformMove) {
+            AddPlatformMove other = (AddPlatformMove) o;
+            return new EqualsBuilder()
+                    .append(part, other.part)
+                    .append(platformList, other.platformList)
+                    .append(newPlatform, other.newPlatform)
+                    .isEquals();
+        } else {
+            return false;
+        }
+    }
+
+    public int hashCode() {
+        return new HashCodeBuilder()
+                .append(part)
+                .append(platformList)
+                .append(newPlatform)
+                .toHashCode();
     }
 }

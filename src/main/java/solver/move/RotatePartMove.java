@@ -1,6 +1,8 @@
 package solver.move;
 
 import domain.Part;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.optaplanner.core.impl.move.Move;
 import org.optaplanner.core.impl.score.director.ScoreDirector;
 
@@ -42,6 +44,23 @@ public class RotatePartMove implements Move {
         return Collections.singletonList(null);
     }
 
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        } else if (o instanceof RotatePartMove) {
+            RotatePartMove other = (RotatePartMove) o;
+            return new EqualsBuilder()
+                    .append(part, other.part)
+                    .isEquals();
+        } else {
+            return false;
+        }
+    }
 
+    public int hashCode() {
+        return new HashCodeBuilder()
+                .append(part)
+                .toHashCode();
+    }
 
 }
