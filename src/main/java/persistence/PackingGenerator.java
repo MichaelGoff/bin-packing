@@ -22,7 +22,7 @@ public class PackingGenerator {
     public Packing createPacking() {
         Packing packing = new Packing();
 
-        createPlatformList(packing);
+        //createPlatformList(packing);
         createPartList(packing);
         packing.setCoordinateList(createCoordinateList());
 
@@ -31,6 +31,7 @@ public class PackingGenerator {
 
     public void createPartList(Packing packing) {
         List<Part> partList = new ArrayList<Part>();
+        List<Platform> platformList = new ArrayList<Platform>();
         //Scanner to read parts from a provided text file.
         Scanner input = null;
         try {
@@ -54,11 +55,13 @@ public class PackingGenerator {
         }
 
         for (Part part : partList) {         //getting first platform on the list as a default
-            part.setPlatform(packing.getPlatformList().get(0));
-            packing.getPlatformList().get(0).addPart(part);
+            part.setPlatform(new Platform(part.getId(), PLATFORM_SIDE_LENGTH, PLATFORM_SIDE_LENGTH));
+            part.getPlatform().addPart(part);
+            platformList.add(part.getPlatform());
         }
 
         packing.setPartList(partList);
+        packing.setPlatformList(platformList);
     }
 
     public void createPlatformList(Packing packing) {

@@ -32,7 +32,7 @@ public class PlatformChangeMove implements Move {
         scoreDirector.beforeVariableChanged(part, "platform");
         part.getPlatform().getPartList().remove(part);
         part.setPlatform(toPlatform);
-        part.getPlatform().getPartList().add(part);
+        part.getPlatform().addPart(part);
         scoreDirector.afterVariableChanged(part, "platform");
     }
 
