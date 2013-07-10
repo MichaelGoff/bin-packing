@@ -153,7 +153,7 @@ public class Part {
         }
     }
 
-    public boolean solutionEquals(Object o) {
+    public boolean equals(Object o) {     //renamed solutionEquals
         if (this == o) {
             return true;
         } else if (o instanceof Part) {
@@ -161,16 +161,18 @@ public class Part {
             return new EqualsBuilder()
                     .append(id, other.id)
                     .append(platform, other.platform)
+                    .append(coordinates, other.coordinates)
                     .isEquals();
         } else {
             return false;
         }
     }
 
-    public int solutionHashCode() {
+    public int hashCode() {         //renamed solutionHashCode
         return new HashCodeBuilder()
                 .append(id)
                 .append(platform)
+                .append(coordinates)
                 .toHashCode();
     }
 }

@@ -92,7 +92,7 @@ public class Packing implements Solution<HardSoftDoubleScore> {
             for(Iterator<Part> it = partList.iterator(), otherIt = other.partList.iterator(); it.hasNext();) {
                 Part part = it.next();
                 Part otherPart = otherIt.next();
-                if(!part.solutionEquals(otherPart)) {
+                if(!part.equals(otherPart)) {      //changed from solutionEquals
                     return false;
                 }
             }
