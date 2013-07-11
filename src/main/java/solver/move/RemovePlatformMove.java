@@ -39,11 +39,11 @@ public class RemovePlatformMove implements Move {
     }
 
     public Collection<? extends Object> getPlanningEntities() {
-        return Collections.singletonList(null);
+        return Collections.singletonList(part);
     }
 
     public Collection<? extends Object> getPlanningValues() {
-        return Collections.singletonList(null);
+        return Collections.singletonList(platform);
     }
 
     public boolean equals(Object o) {

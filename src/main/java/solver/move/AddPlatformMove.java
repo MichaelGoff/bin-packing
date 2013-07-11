@@ -48,7 +48,7 @@ public class AddPlatformMove implements Move {
     }
 
     public Collection<? extends Object> getPlanningValues() {
-        return Collections.singletonList(null);
+        return Collections.singletonList(newPlatform);
     }
 
     public boolean equals(Object o) {
