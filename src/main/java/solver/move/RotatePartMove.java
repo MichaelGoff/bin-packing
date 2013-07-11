@@ -33,7 +33,7 @@ public class RotatePartMove implements Move {
     }
 
     public String toString() {
-        return part + " Rotated W: " + part.getWidth() + "H: " + part.getHeight();
+        return part + " Rotated";
     }
 
     public Collection<? extends Object> getPlanningEntities() {

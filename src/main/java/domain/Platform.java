@@ -104,10 +104,6 @@ public class Platform {
         return partList.isEmpty();
     }
 
-    public String getLabel() {
-        return "Platform" + id;
-    }
-
     public String toString() {
         return "Platform " + id;
     }

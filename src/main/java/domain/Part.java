@@ -102,12 +102,11 @@ public class Part {
     }
 
     public String getLabel() {
-        return "Part" + id;
+        return "Part " + id + ": ";
     }
 
     public String toString () {
-        return getLabel() + " --> " + platform.getLabel() + ": " + coordinates +
-                            " W: " + width + " H: " + height;
+        return getLabel() + " W: " + width + " H: " + height;
     }
 
     public boolean widthOverlapsPlatform(){
