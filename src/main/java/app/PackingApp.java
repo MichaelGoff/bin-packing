@@ -33,7 +33,7 @@ public class PackingApp  {
     public static String toDisplayString(Packing packing) {
         String text = "";
         for(Part part : packing.getPartList()) {
-            text = text.concat("" + part + " " + part.getPlatform() + "\n");
+            text = text.concat("" + part + " " + part.getPlatform() + " " + part.getCoordinates() + "\n");
         }
 
         return text;
