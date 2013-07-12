@@ -16,8 +16,7 @@ global HardSoftDoubleScoreHolder scoreHolder;
 rule "partOverlap"        //TODO: why does this produce a positive hard score?
     when
         $p1 : Part($id : id)
-        $p2 : Part(id > $id)
-        eval($p2.intersects($p1))
+        $p2 : Part(intersects($p1) == true, id > $id)
 
     then
         scoreHolder.addHardConstraintMatch(kcontext, -$p2.intersectArea($p1));
@@ -25,16 +24,14 @@ end
 
 rule "outOfPlatformBoundsWidth"
     when
-        $part : Part($id : id)
-        eval($part.widthOverlapsPlatform())
+        $part : Part(widthOverlapsPlatform() == true, $id : id)
     then
         scoreHolder.addHardConstraintMatch(kcontext, -$part.widthOverlap());
 end
 
 rule "outOfPlatformBoundsHeight"
     when
-        $part : Part($id : id)
-        eval($part.heightOverlapsPlatform())
+        $part : Part(heightOverlapsPlatform() == true, $id : id)
 
     then
         scoreHolder.addHardConstraintMatch(kcontext, -$part.heightOverlap());
@@ -46,8 +43,7 @@ end
 
 rule "leftoverSpace"
     when
-        $platform : Platform($id : id)
-        eval(!$platform.isEmpty())
+        $platform : Platform(isEmpty() == false, $id : id)
     then
         scoreHolder.addSoftConstraintMatch(kcontext, -$platform.getLeftoverArea());
 end
