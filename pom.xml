@@ -17,18 +17,18 @@
         <dependency>
             <groupId>org.optaplanner</groupId>
             <artifactId>optaplanner-core</artifactId>
-            <version>6.0.0.Beta3</version>
+            <version>6.0.0.Beta5</version>
         </dependency>
         <dependency>
             <groupId>org.drools</groupId>
             <artifactId>drools-core</artifactId>
-            <version>6.0.0.Beta3</version>
+            <version>6.0.0.Beta5</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.drools</groupId>
             <artifactId>drools-compiler</artifactId>
-            <version>6.0.0.Beta3</version>
+            <version>6.0.0.Beta5</version>
             <type>jar</type>
         </dependency>
         <dependency>
