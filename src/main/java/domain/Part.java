@@ -112,8 +112,9 @@ public class Part {
                 (this.width + this.coordinates.getX() > this.platform.getWidth());
     }
 
-    public double widthOverlap() {
-        return (this.coordinates.getX() + this.width) - platform.getWidth();
+    //returns as integer
+    public int widthOverlap() {
+        return (int)((this.coordinates.getX() + this.width) - platform.getWidth());
     }
 
     public boolean heightOverlapsPlatform() {
@@ -121,8 +122,9 @@ public class Part {
                 (this.height + this.coordinates.getY() > this.platform.getHeight());
     }
 
-    public double heightOverlap() {
-        return ((this.coordinates.getY() + this.height) - platform.getHeight());
+    //returns as integer
+    public int heightOverlap() {
+        return (int)((this.coordinates.getY() + this.height) - platform.getHeight());
     }
 
 
@@ -139,14 +141,19 @@ public class Part {
                 part.coordinates.getY() < this.coordinates.getY() + this.height);
     }
 
-    public double intersectArea(Part part) {
+    /**
+     * Returns the area to the nearest integer
+     * @param part the part to check.
+     * @return the area as an integer
+     */
+    public int intersectArea(Part part) {
         if(intersects(part)) {
-            return Math.abs(((part.getCoordinates().getX() + part.getWidth()) -
+            return (int)(Math.abs(((part.getCoordinates().getX() + part.getWidth()) -
                         this.getCoordinates().getX()) *
                     ((part.getCoordinates().getY() + part.getHeight()) -
-                        this.getCoordinates().getY()));
+                        this.getCoordinates().getY())));
         } else {
-            return 0.0;
+            return 0;
         }
     }
 

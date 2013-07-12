@@ -76,12 +76,13 @@ public class Platform {
         return width * height;
     }
 
-    public double getLeftoverArea() {
-        double sum = 0;
+    //returns nearest integer
+    public int getLeftoverArea() {
+        int sum = 0;
         for(Part p : partList) {
             sum += p.getArea();
         }
-        return getArea() - sum;
+        return (int)getArea() - sum;
     }
 
     public boolean isEmpty() {

@@ -1,13 +1,13 @@
 package solver;
     dialect "java"
 
-import org.optaplanner.core.api.score.buildin.hardsoftdouble.HardSoftDoubleScoreHolder;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
 
 import domain.Packing;
 import domain.Part;
 import domain.Platform;
 
-global HardSoftDoubleScoreHolder scoreHolder;
+global HardSoftScoreHolder scoreHolder;
 
 //*****************
 // Hard Constraints
@@ -19,14 +19,22 @@ rule "partOverlap"        //TODO: why does this produce a positive hard score?
         $p2 : Part(intersects($p1) == true, id > $id)
 
     then
-        scoreHolder.addHardConstraintMatch(kcontext, -$p2.intersectArea($p1));
+        if($p2.intersectArea($p1) < 1) {
+            scoreHolder.addHardConstraintMatch(kcontext, -1);
+        } else {
+            scoreHolder.addHardConstraintMatch(kcontext, -$p2.intersectArea($p1));
+        }
 end
 
 rule "outOfPlatformBoundsWidth"
     when
         $part : Part(widthOverlapsPlatform() == true, $id : id)
     then
-        scoreHolder.addHardConstraintMatch(kcontext, -$part.widthOverlap());
+        if($part.widthOverlap() < 1) {
+            scoreHolder.addHardConstraintMatch(kcontext, -1);
+        } else {
+            scoreHolder.addHardConstraintMatch(kcontext, -$part.widthOverlap());
+        }
 end
 
 rule "outOfPlatformBoundsHeight"
@@ -34,7 +42,11 @@ rule "outOfPlatformBoundsHeight"
         $part : Part(heightOverlapsPlatform() == true, $id : id)
 
     then
-        scoreHolder.addHardConstraintMatch(kcontext, -$part.heightOverlap());
+        if($part.heightOverlap() < 1) {
+                scoreHolder.addHardConstraintMatch(kcontext, -1);
+            } else {
+                scoreHolder.addHardConstraintMatch(kcontext, -$part.heightOverlap());
+            }
 end
 
 //*****************
