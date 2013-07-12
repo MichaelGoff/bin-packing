@@ -5,13 +5,13 @@
     <planningEntityClass>domain.Part</planningEntityClass>
     <!-- Define the score function -->
     <scoreDirectorFactory>
-        <scoreDefinitionType>HARD_SOFT_DOUBLE</scoreDefinitionType>
+        <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
         <scoreDrl>/solver/packingScoreRules.drl</scoreDrl>
     </scoreDirectorFactory>
 
     <!-- Configure the optimization algorithm(s) -->
     <termination>
-        <maximumSecondsSpend>22</maximumSecondsSpend>
+        <maximumSecondsSpend>4</maximumSecondsSpend>
         <!--<scoreAttained>-0hard/-999999soft</scoreAttained>-->
     </termination>
     <constructionHeuristic>
