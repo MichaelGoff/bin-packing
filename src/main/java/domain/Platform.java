@@ -16,8 +16,6 @@ public class Platform {
     private List<Part> partList;
     private Long id;
 
-
-
     public Platform (Long id, double height, double width) {
         if (height <= 0.0 || width <= 0.0) {
             throw new IllegalArgumentException("Platform height and width must be > 0");
@@ -48,10 +46,6 @@ public class Platform {
         return partList;
     }
 
-    public void setPartList(List<Part> partList) {
-        this.partList = partList;
-    }
-
     public List<Coordinate> getPossibleCoordinatesList() {
         List<Coordinate> possibleCoordinatesList = new ArrayList<Coordinate>();
 
@@ -68,16 +62,6 @@ public class Platform {
             }
         }
         return possibleCoordinatesList;
-    }
-
-    /**
-     * Checks if the part will fit on the platform.
-     * @param part The part to check if it will fit.
-     * @return Returns true if the part will fit on the platform. False if it goes off an edge.
-     */
-    public boolean canHold(Part part) {
-        return (part.getCoordinates().getX() + part.getWidth()) <= getWidth() &&
-                (part.getCoordinates().getY() + part.getHeight()) <= getHeight();
     }
 
     /**

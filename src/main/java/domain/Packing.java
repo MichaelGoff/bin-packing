@@ -64,11 +64,6 @@ public class Packing implements Solution<HardSoftDoubleScore> {
         return partList;
     }
 
-    public void addPlatform() {
-        platformList.add(new Platform(new Long(platformList.size()), 10.0, 10.0));
-    }
-
-
     public Collection<? extends Object> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
         facts.addAll(platformList);

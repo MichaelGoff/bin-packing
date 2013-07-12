@@ -25,8 +25,6 @@ public class Part {
     private Platform platform;
     private Long id;
 
-
-
     public Part(Long id, double width, double height) {
         this.id = id;
         setHeight(height);
