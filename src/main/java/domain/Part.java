@@ -63,8 +63,8 @@ public class Part {
         this.id = id;
     }
 
-    //@PlanningVariable
-    //@ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "platformList")
+    @PlanningVariable
+    @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "platformList")
     public Platform getPlatform() {
         return platform;
     }

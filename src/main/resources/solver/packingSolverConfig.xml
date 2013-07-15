@@ -20,13 +20,22 @@
     </constructionHeuristic>
     <localSearch>
         <unionMoveSelector>
-            <changeMoveSelector />
+            <changeMoveSelector>
+                <valueSelector>
+                    <variableName>platform</variableName>
+                </valueSelector>
+            </changeMoveSelector>
+            <changeMoveSelector>
+                <valueSelector>
+                    <variableName>coordinates</variableName>
+                </valueSelector>
+            </changeMoveSelector>
             <moveListFactory>
                 <moveListFactoryClass>solver.move.factory.RotatePartMoveFactory</moveListFactoryClass>
             </moveListFactory>
-            <moveListFactory>
-                <moveListFactoryClass>solver.move.factory.PlatformChangeMoveFactory</moveListFactoryClass>
-            </moveListFactory>
+            <!--<moveListFactory>-->
+                <!--<moveListFactoryClass>solver.move.factory.PlatformChangeMoveFactory</moveListFactoryClass>-->
+            <!--</moveListFactory>-->
             <!-- Causes infinite loop. Endlessly generates platforms
             <moveListFactory>
                 <moveListFactoryClass>solver.move.factory.AddPlatformMoveFactory</moveListFactoryClass>
