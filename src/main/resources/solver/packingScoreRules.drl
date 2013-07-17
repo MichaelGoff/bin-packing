@@ -43,7 +43,9 @@ end
 
 rule "leftoverSpace"
     when
-        $platform : Platform(isEmpty() == false, $id : id)
+        $part: Part($partId : id);
+        $platform : Platform($platformId : id) from $part.getPlatform()
+
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, -$platform.getLeftoverArea());
+        scoreHolder.addSoftConstraintMatch(kcontext, -($platform.getLeftoverArea() / $platform.getPartList().size()));
 end
