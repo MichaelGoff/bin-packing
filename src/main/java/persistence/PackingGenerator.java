@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class PackingGenerator {
 
@@ -32,10 +33,11 @@ public class PackingGenerator {
     public void createPartList(Packing packing) {
         List<Part> partList = new ArrayList<Part>();
         List<Platform> platformList = new ArrayList<Platform>();
+        int id = 0;
         //Scanner to read parts from a provided text file.
         Scanner input = null;
         try {
-            input = new Scanner(new File("src/main/resources/partsList.txt"));
+            input = new Scanner(new File("src/main/resources/order_geometries.csv"));
         } catch(FileNotFoundException e) {
             System.out.println("Parts List Text File not found in PackingGenerator.java");
             System.exit(1);
@@ -45,13 +47,28 @@ public class PackingGenerator {
         input.nextLine();
         while(input.hasNext()) {
             String line = input.nextLine();
-            Scanner lineScan = new Scanner(line);
-            int id = lineScan.nextInt();
-            double width = lineScan.nextDouble();
-            double height = lineScan.nextDouble();
-            Part temp = new Part((long) id, width, height);
-            temp.setCoordinates(new Coordinate());
-            partList.add(temp);
+            StringTokenizer st =  new StringTokenizer(line, ",");
+            st.nextToken(); //build ID
+            st.nextToken(); //end time
+            String orderId = st.nextToken(); //order Id
+            st.nextToken(); //name
+            int buildQuantity = Integer.parseInt(st.nextToken());
+            st.nextToken(); //volume
+            st.nextToken(); //sa
+            st.nextToken(); //build direction
+            st.nextToken(); //finish level
+            double width = Double.parseDouble(st.nextToken());
+            double height = Double.parseDouble(st.nextToken());
+            st.nextToken(); //z value
+
+            if(orderId.equals("109076")) {
+                for(int i = 0; i < buildQuantity; i++) {
+                    Part temp = new Part((long) id, width, height);
+                    id++;
+                    temp.setCoordinates(new Coordinate());
+                    partList.add(temp);
+                }
+            }
         }
 
         for (Part part : partList) {         //getting first platform on the list as a default
