@@ -1,0 +1,24 @@
+<plannerBenchmark>
+    <inheritedSolverBenchmark>
+        <problemBenchmarks>
+            <!--Solution file ??-->
+            <problemStatisticType>BEST_SCORE</problemStatisticType>
+        </problemBenchmarks>
+        <solver>
+            <solutionClass>domain.Packing</solutionClass>
+            <planningEntityClass>domain.Part</planningEntityClass>
+            <scoreDirectorFactory>
+                <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+                <scoreDrl>/solver/packingScoreRules.drl</scoreDrl>
+            </scoreDirectorFactory>
+            <termination>
+                <maximumSecondsSpend>22</maximumSecondsSpend>
+            </termination>
+            <constructionHeuristic>
+                <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+                <constructionHeuristicPickEarlyType>FIRST_LAST_STEP_SCORE_EQUAL_OR_IMPROVING</constructionHeuristicPickEarlyType>
+            </constructionHeuristic>
+        </solver>
+    </inheritedSolverBenchmark>
+
+</plannerBenchmark>
