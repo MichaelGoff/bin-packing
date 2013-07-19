@@ -20,6 +20,11 @@
             <version>6.0.0.Beta5</version>
         </dependency>
         <dependency>
+            <groupId>org.optaplanner</groupId>
+            <artifactId>optaplanner-benchmark</artifactId>
+            <version>6.0.0.Beta5</version>
+        </dependency>
+        <dependency>
             <groupId>org.drools</groupId>
             <artifactId>drools-core</artifactId>
             <version>6.0.0.Beta5</version>
