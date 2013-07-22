@@ -1,4 +1,7 @@
 <plannerBenchmark>
+    <benchmarkDirectory>benchmark/data</benchmarkDirectory>
+    <warmUpSecondsSpend>30</warmUpSecondsSpend>
+
     <inheritedSolverBenchmark>
         <problemBenchmarks>
             <!--Solution file ??-->
@@ -20,5 +23,54 @@
             </constructionHeuristic>
         </solver>
     </inheritedSolverBenchmark>
-
+    <solverBenchmark>
+        <name>Simulated-Annealing</name>
+        <solver>
+            <localSearch>
+                <unionMoveSelector>
+                    <changeMoveSelector />
+                    <moveListFactory>
+                        <moveListFactoryClass>solver.move.factory.RotatePartMoveFactory</moveListFactoryClass>
+                    </moveListFactory>
+                    <moveListFactory>
+                        <moveListFactoryClass>solver.move.factory.PlatformChangeMoveFactory</moveListFactoryClass>
+                    </moveListFactory>
+                    <moveListFactory>
+                        <moveListFactoryClass>solver.move.factory.RemovePlatformMoveFactory</moveListFactoryClass>
+                    </moveListFactory>
+                </unionMoveSelector>
+                <acceptor>
+                    <simulatedAnnealingStartingTemperature>2hard/50soft</simulatedAnnealingStartingTemperature>
+                </acceptor>
+                <forager>
+                    <acceptedCountLimit>4</acceptedCountLimit>
+                </forager>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+    <solverBenchmark>
+        <name>Tabu-Search</name>
+        <solver>
+            <localSearch>
+                <unionMoveSelector>
+                    <changeMoveSelector />
+                    <moveListFactory>
+                        <moveListFactoryClass>solver.move.factory.RotatePartMoveFactory</moveListFactoryClass>
+                    </moveListFactory>
+                    <moveListFactory>
+                        <moveListFactoryClass>solver.move.factory.PlatformChangeMoveFactory</moveListFactoryClass>
+                    </moveListFactory>
+                    <moveListFactory>
+                        <moveListFactoryClass>solver.move.factory.RemovePlatformMoveFactory</moveListFactoryClass>
+                    </moveListFactory>
+                </unionMoveSelector>
+                <acceptor>
+                    <entityTabuSize>10</entityTabuSize>
+                </acceptor>
+                <forager>
+                    <acceptedCountLimit>900</acceptedCountLimit>
+                </forager>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
 </plannerBenchmark>
