@@ -93,15 +93,16 @@ public class PackingGenerator {
     public void createXCoordinateList() {
         xCoordinateList = new ArrayList<BigDecimal>();
         for(int i = 0; i < PLATFORM_SIDE_LENGTH; i++) {
-            for (int j = 0; j <= 99; j++) {
-                BigDecimal bd;
-                if(j <= 9) {
-                    bd = new BigDecimal("" + i + ".0" + j);
-                } else {
-                    bd = new BigDecimal("" + i + "." + j);
-                }
+            for (int j = 0; j <= 9; j++) {
+                BigDecimal bd = new BigDecimal("" + i + "." + j);
+                //rounding to the hundredths place
+//                if(j <= 9) {
+//                    bd = new BigDecimal("" + i + ".0" + j);
+//                } else {
+//                    bd = new BigDecimal("" + i + "." + j);
+//                }
 
-                bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+                bd = bd.setScale(1, BigDecimal.ROUND_HALF_UP);
                 xCoordinateList.add(bd);
             }
         }
@@ -110,16 +111,17 @@ public class PackingGenerator {
     public void createYCoordinateList() {
         yCoordinateList = new ArrayList<BigDecimal>();
         for (int i = 0; i < PLATFORM_SIDE_LENGTH; i++) {
-            for (int j = 0; j <= 99; j++) {
-                BigDecimal bd;
-                if (j <= 9) {
-                    bd = new BigDecimal("" + i + ".0" + j);
+            for (int j = 0; j <= 9; j++) {
+                BigDecimal bd = new BigDecimal("" + i + "." + j);
+                    //rounding to the hundredths place
+//                if (j <= 9) {
+//                    bd = new BigDecimal("" + i + ".0" + j);
+//
+//                } else {
+//                    bd = new BigDecimal("" + i + "." + j);
+//                }
 
-                } else {
-                    bd = new BigDecimal("" + i + "." + j);
-                }
-
-                bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+                bd = bd.setScale(1, BigDecimal.ROUND_HALF_UP);
                 yCoordinateList.add(bd);
             }
         }
