@@ -13,7 +13,7 @@ global HardSoftScoreHolder scoreHolder;
 // Hard Constraints
 //*****************
 
-rule "partOverlap"        //TODO: why does this produce a positive hard score?
+rule "partOverlap"
     when
         $p1 : Part($id : id)
         $p2 : Part(intersects($p1) == true, id > $id)

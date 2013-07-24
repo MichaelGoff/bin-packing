@@ -23,7 +23,6 @@ public class PackingGenerator {
     public Packing createPacking() {
         Packing packing = new Packing();
 
-        //createPlatformList(packing);
         createPartList(packing);
         packing.setCoordinateList(createCoordinateList());
 
