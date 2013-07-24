@@ -12,11 +12,6 @@ import org.optaplanner.core.api.domain.variable.PlanningVariable;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * Defines the aspects of a part.
- *
- * @author Michael Goff <mag@finelineprototyping.com>
- */
 @PlanningEntity(difficultyComparatorClass = PartDifficultyComparator.class)
 public class Part {
     private double height;

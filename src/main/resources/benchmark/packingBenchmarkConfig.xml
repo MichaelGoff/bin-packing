@@ -4,7 +4,8 @@
 
     <inheritedSolverBenchmark>
         <problemBenchmarks>
-            <!--Solution file ??-->
+            <!--todo: add solution file for benchmark usage-->
+            <!--is there a way to generate this file? otherwise 1000+ lines of xml-->
             <problemStatisticType>BEST_SCORE</problemStatisticType>
         </problemBenchmarks>
         <solver>

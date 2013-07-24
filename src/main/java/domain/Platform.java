@@ -5,11 +5,6 @@ import persistence.PackingGenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Defines the aspects of a platform.
- *
- * @author Michael Goff
- */
 public class Platform {
     private double height;
     private double width;
