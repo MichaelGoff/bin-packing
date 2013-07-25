@@ -32,8 +32,8 @@ public class Part {
 
     @PlanningVariable
     //TODO: limit coordinate list to those that are possible.
-    //@ValueRange(type = ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY, planningEntityProperty = "possibleCoordinatesList")
-    @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty  = "coordinateList")
+    @ValueRange(type = ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY, planningEntityProperty = "possibleCoordinatesList")
+    //@ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty  = "coordinateList")
     public Coordinate getCoordinates() {
         return coordinates;
     }
@@ -43,7 +43,7 @@ public class Part {
     }
 
     public List<Coordinate> getPossibleCoordinatesList() {
-        return getPlatform().getPossibleCoordinatesList();
+        return platform.getPossibleCoordinatesList();
     }
 
     public void setCoordinate(BigDecimal x, BigDecimal y) {

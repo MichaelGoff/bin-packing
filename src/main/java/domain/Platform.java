@@ -49,9 +49,9 @@ public class Platform {
         for(Coordinate coordinate : coordinateList) {
             for(Part part : partList) {
                 if ((coordinate.getX() < part.getCoordinates().getX() ||
-                    coordinate.getX() >= part.getCoordinates().getX() + part.getWidth()) &&
+                    coordinate.getX() > part.getCoordinates().getX() + part.getWidth()) &&
                         (coordinate.getY() < part.getCoordinates().getY() ||
-                        coordinate.getY() >= part.getCoordinates().getY() + part.getHeight())) {
+                        coordinate.getY() > part.getCoordinates().getY() + part.getHeight())) {
                     possibleCoordinatesList.add(coordinate);
                 }
             }
