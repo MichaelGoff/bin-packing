@@ -11,7 +11,7 @@
 
     <!-- Configure the optimization algorithm(s) -->
     <termination>
-        <maximumSecondsSpend>22</maximumSecondsSpend>
+        <maximumSecondsSpend>5</maximumSecondsSpend>
         <!--<scoreAttained>-0hard/-999999soft</scoreAttained>-->
     </termination>
     <constructionHeuristic>
