@@ -2,7 +2,6 @@ package app;
 
 import domain.Packing;
 import domain.Part;
-import domain.Platform;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.config.solver.XmlSolverFactory;
 import persistence.PackingGenerator;

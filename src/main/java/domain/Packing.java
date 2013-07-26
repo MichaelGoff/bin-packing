@@ -10,18 +10,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Collection;
 
-/**
- * domain.Packing class.
- *
- * @author Michael Goff
- */
 @PlanningSolution
 public class Packing implements Solution<HardSoftScore> {
     private List<Platform> platformList;
     private List<Part> partList;
     private List<Coordinate> coordinateList;
     private HardSoftScore score;
-    private Long id;
 
     public HardSoftScore getScore() {
         return score;
@@ -29,14 +23,6 @@ public class Packing implements Solution<HardSoftScore> {
 
     public void setScore(HardSoftScore score) {
         this.score = score;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public List<Coordinate> getCoordinateList() {

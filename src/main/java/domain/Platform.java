@@ -25,10 +25,6 @@ public class Platform {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public double getHeight() {
         return height;
     }
@@ -87,8 +83,4 @@ public class Platform {
     public String toString() {
         return "Platform " + id;
     }
-
-
-
-
 }

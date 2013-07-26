@@ -1,7 +1,6 @@
 package domain;
 
 import domain.solver.PartDifficultyComparator;
-import domain.solver.PlatformStrengthComparator;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
@@ -32,6 +31,7 @@ public class Part {
 
     @PlanningVariable
     //TODO: limit coordinate list to those that are possible.
+    //Makes score worse.
     //@ValueRange(type = ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY, planningEntityProperty = "possibleCoordinatesList")
     @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty  = "coordinateList")
     public Coordinate getCoordinates() {
