@@ -6,6 +6,7 @@ import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.config.solver.XmlSolverFactory;
 import persistence.PackingGenerator;
 
+import java.io.File;
 
 public class PackingApp  {
 
@@ -16,6 +17,11 @@ public class PackingApp  {
         Solver solver = solverFactory.buildSolver();
 
         Packing unsolvedPacking = new PackingGenerator().createPacking();
+
+        SolutionFileWriter solutionFileWriter = new SolutionFileWriter();
+        File solutionFile = new File("src/main/resources/benchmark/data/unsolved/test_input.xml");
+
+        solutionFileWriter.write(unsolvedPacking, solutionFile);
 
         //Solving and producing result.
         solver.setPlanningProblem(unsolvedPacking);
